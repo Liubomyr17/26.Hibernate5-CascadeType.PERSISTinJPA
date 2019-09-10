@@ -1,13 +1,8 @@
 package com.infotech.entities;
 
-import org.hibernate.annotations.CollectionId;
 import org.hibernate.annotations.DynamicUpdate;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 
 @Entity
@@ -32,7 +27,7 @@ public class Employee {
     @Column(name="salary")
     private Double salary;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "address_id")
     private Address address;
 
